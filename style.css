@@ -1,0 +1,88 @@
+section {
+    height: 400px;
+    margin: 10px 0;
+  }
+  #one {
+    background: rgb(150, 150, 150);
+  }
+  #two {
+    background: rgb(205, 205, 205);
+  }
+  div {
+    width: 90px;
+    height: 90px;
+    border: 3px solid black;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #two div {
+    width: 400px;
+  }
+  #red {
+    background: red;
+  }
+  #green {
+    background: green;
+  }
+  #blue {
+    background: blue;
+  }
+  #orange {
+    background: orange;
+  }
+  #purple {
+    background: purple;
+  }
+  #brown {
+    background: brown;
+  }
+  /* START BELOW THIS LINE */
+
+  #one{
+      /* 1: Converting the top section into a flexbox. */
+      display:flex;
+      /* 2: Moves the boxes to the upper right corner */
+      justify-content: flex-end;
+      /* 3: Switching the main axis for the current flexbox from X to Y. */
+      flex-direction:column;
+      /* 4:Horizontally aligning the boxes to the center of the container. */
+      align-items:center;
+  }
+
+  #two{
+      /* 5:Converting the lower container into a flexbox */
+      display:flex;
+      /* 6:Centering the items vertically within the flexbox */
+      align-items:center;
+      /* 7:Spacing the items evenly within the flexbox, migrating orange and brown to the edges and centering purple */
+      justify-content:space-between;
+      /* 8: Setting the brown box to move down when the window does not allow enough space */
+      flex-wrap:wrap;
+  }
+
+  /* Bonus: */
+
+  #one{
+      /* B1: In one line, reverse the order and position of the column */
+      flex-direction: column-reverse;
+  }
+
+  /* B2: Change the order of the elements within the second container.*/
+  /* Since unordered items seem to be counted as "zero", tiebroken by entry order, brown does not need its own order entry. */
+  /* B3: Move brown to the upper left and purple to bottom right.  Essentially, diagonal arrangement. */
+  #orange{
+      order:1;
+    }
+    #purple{
+        order:2;
+        align-self:flex-end;
+    }
+    
+    #brown{
+        align-self:flex-start;
+    }
